@@ -52,7 +52,7 @@ export default {
 
     const connect = async () => {
       const isSecure = location.protocol === 'https:';
-      const url = (isSecure ? 'wss://' : 'ws://') + location.host + '/_ws';
+      const url = location.protocol + '//' + location.host + '/_ws';
       if (ws) {
         log('ws', 'Closing previous connection before reconnecting...');
         ws.close();
